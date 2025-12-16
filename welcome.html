@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Message</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d5e52 0%, #1a8072 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px 20px;
+        }
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .greeting {
+            color: #0d5e52;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .message-content {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .bible-verse {
+            background: rgba(13, 94, 82, 0.1);
+            border-left: 4px solid #0d5e52;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #0d5e52;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .highlight-name {
+            color: #d9534f;
+            font-weight: 600;
+        }
+
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .btn-back {
+            background: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .btn-back:hover {
+            background: #c9302c;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(217, 83, 79, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="message-card">
+                    <div class="greeting">Dear <span class="highlight-name" id="userName1">Friend</span>,</div>
+                    
+                    <p class="message-content">
+                        Hi, <span class="highlight-name" id="userName2">Friend</span>. I may not know you personally, but I'm really glad that this Christmas brought our paths together in this special way.
+                    </p>
+                    
+                    <p class="message-content">
+                        Wishing you a peaceful and joyful Christmas. This special time of year quietly reminds us that God stepped into our world in a simple and humble way through the birth of Jesus.
+                    </p>
+                    
+                    <div class="bible-verse">
+                        "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." (John 3:16, NIV)
+                    </div>
+                    
+                    <p class="message-content">
+                        <span class="highlight-name" id="userName3">Friend</span>, as you walk through this season, I hope you know deep in your heart that you're not alone and that God's love gently surrounds your life. Sometimes, a simple act of kindness or a quiet pause of gratitude is all it takes to feel His presence.
+                    </p>
+                    
+                    <p class="message-content">
+                        I'm truly praying that this Christmas brings you calm, courage, and a renewed sense of hope for the days ahead. May His peace fill every part of your heart and mind.
+                    </p>
+                    
+                    <div class="signature">
+                        With warm wishes,<br>
+                        <strong>A Friend in Christ</strong>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <a href="index.html" class="btn-back">Return</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the username from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('name');
+        
+        // Display the username in all places if it exists
+        if(userName && userName.trim() !== '') {
+            document.getElementById('userName1').textContent = userName;
+            document.getElementById('userName2').textContent = userName;
+            document.getElementById('userName3').textContent = userName;
+        }
+    </script>
+</body>
+</html>
